@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheLittleThingsPlayground.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheLittleThingsPlayground.iOS", "TheLittleThingsPlayground.iOS\TheLittleThingsPlayground.iOS.csproj", "{2D18B695-2B8E-4AA7-8F7A-939002A30006}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheLittleThingsPlayground", "TheLittleThingsPlayground\TheLittleThingsPlayground.csproj", "{4E1B7C52-4984-44CE-98AF-25CD7A9FB3ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheLittleThingsPlayground", "TheLittleThingsPlayground\TheLittleThingsPlayground.csproj", "{4E1B7C52-4984-44CE-98AF-25CD7A9FB3ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
