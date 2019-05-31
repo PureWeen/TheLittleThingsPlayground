@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms.Internals;
 
 namespace TheLittleThingsPlayground.Droid
 {
@@ -14,6 +15,7 @@ namespace TheLittleThingsPlayground.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
+            Profile.Start();
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

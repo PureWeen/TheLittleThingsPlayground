@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+			 Shell.TabBarIsVisible="false"
+             x:Class="VisualTesting.Pages.SideBySide">
+    <ContentPage.Content>
+		<ScrollView>
+			<StackLayout>
+				<StackLayout Margin="20" HeightRequest="100" Orientation="Horizontal">
+					<ActivityIndicator HeightRequest="20" BackgroundColor="Yellow" Color="Purple" IsRunning="True" HorizontalOptions="FillAndExpand"></ActivityIndicator>
+					<ActivityIndicator HeightRequest="20" BackgroundColor="Yellow" Color="Purple" IsRunning="True" HorizontalOptions="FillAndExpand" Visual="Material"></ActivityIndicator>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Button HorizontalOptions="FillAndExpand" Text="Button" ImageSource="coffee.png"></Button>
+					<Button HorizontalOptions="FillAndExpand" Text="Button" ImageSource="coffee.png" Visual="Material"></Button>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Editor HorizontalOptions="FillAndExpand" ></Editor>
+					<Editor HorizontalOptions="FillAndExpand" Visual="Material"></Editor>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Entry Placeholder="Place Holder" HorizontalOptions="FillAndExpand" Visual="Material"></Entry>
+					<Entry Placeholder="Place Holder" HorizontalOptions="FillAndExpand" ></Entry>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Frame HorizontalOptions="FillAndExpand" CornerRadius="20" BorderColor="Red">
+						<Image Source="coffee.png"></Image>
+					</Frame>
+					<Frame HorizontalOptions="FillAndExpand" CornerRadius="20" Visual="Material" BorderColor="Red">
+						<Image Source="coffee.png"></Image>
+					</Frame>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<ProgressBar Progress="50"  HorizontalOptions="FillAndExpand" ProgressColor="Red" BackgroundColor="Green" HeightRequest="20"></ProgressBar>
+					<ProgressBar Progress="50" HorizontalOptions="FillAndExpand" ProgressColor="Red" BackgroundColor="Green" HeightRequest="20" Visual="Material"></ProgressBar>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Stepper HorizontalOptions="FillAndExpand" ></Stepper>
+					<Stepper HorizontalOptions="FillAndExpand" Visual="Material"></Stepper>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<Slider HorizontalOptions="FillAndExpand" ></Slider>
+					<Slider HorizontalOptions="FillAndExpand" Visual="Material"></Slider>
+				</StackLayout>
+
+			</StackLayout>
+		</ScrollView>
+    </ContentPage.Content>
+</ContentPage>

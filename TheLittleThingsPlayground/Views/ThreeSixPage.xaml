@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TheLittleThingsPlayground.Views.ThreeSixPage"
-             Shell.TabBarIsVisible="False"
-             Title="3.6.0" 
-             ControlTemplate="{StaticResource MasterPage}">
+             Title="3.6.0" >
     
     <ContentPage.Resources>
         <StyleSheet Source="../Styles/Global.css"/>
@@ -28,30 +26,40 @@
                      AutomationProperties.HelpText="Tap here to view the XAML for this page."
                      />
     </ContentPage.ToolbarItems>
-    
-    <StackLayout>
 
-        <!-- ReadOnly Entry -->
-        <Label Text="Entry - ReadOnly" class="featureHeader"  FontSize="Large" Margin="0,0,0,10"/>
-        <BoxView BackgroundColor="Black" Margin="0,0,0,10" HeightRequest="1"/>
+	<ScrollView VerticalScrollBarVisibility="Always" 
+                HorizontalScrollBarVisibility="Never">
+		<FlexLayout Margin="15" Direction="Column">
 
-        <Entry Text="Some content" IsReadOnly="true"/>
+			<StackLayout>
 
-        <!-- Visual -->
-        <Label Text="Visual - Material controls" class="featureHeader" />
-        <BoxView BackgroundColor="Black" Margin="0,0,0,10" HeightRequest="1"/>
-        <StackLayout Visual="Material">
-            <Button Text="ActivityIndicator" Command="{Binding GoToVisualPage}" CommandParameter="activityindicators"/>
-            <Button Text="Button" Command="{Binding GoToVisualPage}" CommandParameter="buttons"/>
-            <Button Text="Card" Command="{Binding GoToVisualPage}" CommandParameter="cards"/>
-            <Button Text="Editor" Command="{Binding GoToVisualPage}" CommandParameter="editors"/>
-            <Button Text="Entry" Command="{Binding GoToVisualPage}" CommandParameter="entries"/>
-            <Button Text="Picker" Command="{Binding GoToVisualPage}" CommandParameter="pickers"/>
-            <Button Text="Progress" Command="{Binding GoToVisualPage}" CommandParameter="progress"/>
-            <Button Text="Slider" Command="{Binding GoToVisualPage}" CommandParameter="sliders"/>
-            <Button Text="Stepper" Command="{Binding GoToVisualPage}" CommandParameter="steppers"/>
-        </StackLayout>
-        
-        
-    </StackLayout>
+				<!-- ReadOnly Entry -->
+				<Label Text="Entry - ReadOnly" class="featureHeader"  FontSize="Large" Margin="0,0,0,10"/>
+				<BoxView BackgroundColor="Black" Margin="0,0,0,10" HeightRequest="1"/>
+
+				<Entry Text="Some content" IsReadOnly="true"/>
+
+				<!-- Visual -->
+				<Label Text="Visual - Material controls" class="featureHeader" />
+				<BoxView BackgroundColor="Black" Margin="0,0,0,10" HeightRequest="1"/>
+				<StackLayout Visual="Material">
+					<StackLayout Orientation="Horizontal">
+						<Label VerticalTextAlignment="Center" Text="Material Query Parameter:"></Label>
+						<CheckBox IsChecked="true" x:Name="useMaterial"></CheckBox>
+					</StackLayout>
+					<!--<Button Text="Side by Side" Command="{Binding GoToVisualPage}" CommandParameter="sidebyside"/>-->
+					<Button Text="ActivityIndicator" Command="{Binding GoToVisualPage}" CommandParameter="activityindicators"/>
+					<Button Text="Button" Command="{Binding GoToVisualPage}" CommandParameter="buttons"/>
+					<Button Text="Card" Command="{Binding GoToVisualPage}" CommandParameter="cards"/>
+					<Button Text="CheckBox" Command="{Binding GoToVisualPage}" CommandParameter="checkbox"/>
+					<Button Text="Editor" Command="{Binding GoToVisualPage}" CommandParameter="editors"/>
+					<Button Text="Entry" Command="{Binding GoToVisualPage}" CommandParameter="entries"/>
+					<Button Text="Picker" Command="{Binding GoToVisualPage}" CommandParameter="pickers"/>
+					<Button Text="Progress (now with height)" Command="{Binding GoToVisualPage}" CommandParameter="progress"/>
+					<Button Text="Slider" Command="{Binding GoToVisualPage}" CommandParameter="sliders"/>
+					<Button Text="Stepper" Command="{Binding GoToVisualPage}" CommandParameter="steppers"/>
+				</StackLayout>
+			</StackLayout>
+		</FlexLayout>
+	</ScrollView>
 </ContentPage>

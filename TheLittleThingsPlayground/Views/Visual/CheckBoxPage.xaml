@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+			 Shell.TabBarIsVisible="false"
+             x:Class="VisualTesting.Pages.CheckBoxPage">
+    <ContentPage.Content>
+        <StackLayout>
+			<Label Text="CheckBox" FontSize="Large"></Label>
+			<Label Text="Normal" Margin="0,0,0,-10" />
+			<CheckBox  />
+			<Label Text="Normal Checked" Margin="0,0,0,-10" />
+			<CheckBox IsChecked="True" />
+			<Label Text="Disabled" Margin="0,0,0,-10" />
+			<CheckBox IsEnabled="False" />
+			<Label Text="Disabled Checked" Margin="0,0,0,-10" />
+			<CheckBox IsEnabled="False" IsChecked="True" />
+			<Label Text="Colored Checked" Margin="0,0,0,-10" />
+			<CheckBox Color="Red" IsChecked="True" />
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

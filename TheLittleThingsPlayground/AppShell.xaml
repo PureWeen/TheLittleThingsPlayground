@@ -4,38 +4,66 @@
        xmlns:views="clr-namespace:TheLittleThingsPlayground.Views"
        xmlns:visuals="clr-namespace:VisualTesting.Pages"
        x:Class="TheLittleThingsPlayground.AppShell"
-       FlyoutHeaderBehavior="Fixed"
-       Route=""
-       RouteHost="microsoft.com"
-       RouteScheme="app"
+	   Shell.BackgroundColor="Transparent"
+	   Shell.FlyoutBehavior="Flyout"
+	   FlyoutHeaderBehavior="CollapseOnScroll"
        >
-    
-    <Shell.Resources>
-        <Style x:Key="BaseStyle" TargetType="Element">
-            <Setter Property="Shell.ShellBackgroundColor" Value="{StaticResource PrimaryColor}" />
-            <Setter Property="Shell.ShellForegroundColor" Value="White" />
-            <Setter Property="Shell.ShellTitleColor" Value="{StaticResource PrimaryTextColor}" />
-            <Setter Property="Shell.ShellDisabledColor" Value="#B4FFFFFF" />
-            <Setter Property="Shell.ShellUnselectedColor" Value="#95FFFFFF" />
-        </Style>
-        <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
-    </Shell.Resources>
-    
-    <ShellItem FlyoutDisplayOptions="AsMultipleItems" Title="Releases" Route="releases">
-        <ShellContent Route="three_six" Title="3.6.0" ContentTemplate="{DataTemplate views:ThreeSixPage}" Icon="iconXamagon"/>
-        <ShellContent Route="three_five" Title="3.5.0" ContentTemplate="{DataTemplate views:ThreeFivePage}" Icon="iconXamagon"/>
-        <ShellContent Title="3.4.0" ContentTemplate="{DataTemplate views:ThreeFourPage}" Icon="iconXamagon"/>
-        <ShellContent Title="3.3.0" ContentTemplate="{DataTemplate views:ThreeThreePage}" Icon="iconXamagon"/>
-        <ShellContent Title="3.2.0" ContentTemplate="{DataTemplate views:ThreeTwoPage}" Icon="iconXamagon"/>
-        <ShellContent Title="3.1.0" ContentTemplate="{DataTemplate views:ThreeOnePage}" Icon="iconXamagon"/>
-    </ShellItem>
-    
-    <ShellContent Title="About" ContentTemplate="{DataTemplate views:AboutPage}" Icon="tab_about" />
-    
-    <Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <BoxView HeightRequest="60" />
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
-    
+
+	<Shell.Resources>
+		<DataTemplate x:Key="ShellItemTemplate">
+			<StackLayout Visual="Material" Orientation="Horizontal">
+				<Button Text="{Binding Title}" />
+			</StackLayout>
+		</DataTemplate>
+	</Shell.Resources>
+	<Shell.FlyoutHeaderTemplate>
+		<DataTemplate>
+			<Image HeightRequest="300" MinimumHeightRequest="100"  BackgroundColor="Black" Source="xamarin_logo.png"></Image>
+		</DataTemplate>
+	</Shell.FlyoutHeaderTemplate>
+	<FlyoutItem Title="Releases" Route="Bottom Tabs" Icon="coffee.png">
+		<Tab  Title="3.6.0" Icon="iconXamagon">
+			<ShellContent Route="three_six" ContentTemplate="{DataTemplate views:ThreeSixPage}" />
+		</Tab>
+		<Tab Title="3.5.0" Icon="iconXamagon">
+			<ShellContent Route="three_five" ContentTemplate="{DataTemplate views:ThreeFivePage}" />
+		</Tab>
+		<Tab Title="3.4.0" Icon="iconXamagon">
+			<ShellContent ContentTemplate="{DataTemplate views:ThreeFourPage}" />
+		</Tab>
+		<Tab Title="3.3.0" Icon="iconXamagon">
+			<ShellContent  ContentTemplate="{DataTemplate views:ThreeThreePage}" />
+		</Tab>
+		<Tab Title="3.2.0" Icon="iconXamagon">
+			<ShellContent  ContentTemplate="{DataTemplate views:ThreeTwoPage}" />
+		</Tab>
+		<Tab Title="3.1.0" Icon="iconXamagon">
+			<ShellContent  ContentTemplate="{DataTemplate views:ThreeOnePage}" />
+		</Tab>
+	</FlyoutItem>
+
+	<MenuItem Text="Talk about the Scrolling"></MenuItem>
+	<MenuItem Shell.MenuItemTemplate="{StaticResource ShellItemTemplate}"  Text="Talk about the Templating"></MenuItem>
+
+	<MenuItem Clicked="OnMenuItemClicked" Text="Login Page Shell"></MenuItem>
+	<MenuItem Clicked="OnMenuItemPushClicked" Text="Login Page Push"></MenuItem>
+
+	<FlyoutItem Title="Talk about the Top Tabs" Route="Top Tabs" Icon="coffee.png">
+		<Tab Title="Releases" Icon="iconXamagon">
+			<ShellContent Title="3.6.0" Route="three_six" ContentTemplate="{DataTemplate views:ThreeSixPage}">
+			</ShellContent>
+			<ShellContent Title="3.5.0" Route="three_five" ContentTemplate="{DataTemplate views:ThreeFivePage}" />
+			<ShellContent Title="3.4.0" ContentTemplate="{DataTemplate views:ThreeFourPage}" />
+			<ShellContent Title="3.3.0"  ContentTemplate="{DataTemplate views:ThreeThreePage}" />
+			<ShellContent Title="3.2.0" ContentTemplate="{DataTemplate views:ThreeTwoPage}" />
+			<ShellContent Title="3.1.0"  ContentTemplate="{DataTemplate views:ThreeOnePage}" />
+		</Tab>
+	</FlyoutItem>
+	<MenuItem Clicked="OnPerformanceClicked" Text="Check Performance"></MenuItem>
+
+	<TabBar Route="loginpage" >
+		<Tab>
+			<ShellContent ContentTemplate="{DataTemplate views:LoginPage}"></ShellContent>
+		</Tab>
+	</TabBar>
 </Shell>

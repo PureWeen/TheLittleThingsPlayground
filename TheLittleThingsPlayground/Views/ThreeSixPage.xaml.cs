@@ -38,7 +38,15 @@ namespace TheLittleThingsPlayground.Views
                 default: break;
             }
 
-            await Navigation.PushAsync((ContentPage)Activator.CreateInstance(targetPage), true);
+            await Shell.Current.GoToAsync($"{page}?material={useMaterial.IsChecked}", true);
+
+            // Future segue syntax
+            /*
+             * <Button
+                Command="{Segue Show, IsAnimated=true}"
+                Segue.Target="app:///s/foo/bar?id={Binding Id}&other={Binding Other}" />
+             * */
+            //await Navigation.PushAsync((ContentPage)Activator.CreateInstance(targetPage), true);
         }
 
         private void ReleaseNotes_Clicked(object sender, EventArgs e)
